@@ -26,12 +26,12 @@ class Products extends Controller{
             'qty'       => 'required',
             'cat_id'    => 'required',
             'img'       => 'required',
-        ]);
+        ]); 
         if($res->percent != 0)
             $price = ($res->price /100) * $res->percent;
         else
             $price = $res->price;
-        
+
         $data = Product::create([
             'name'      => $res->name,
             'disc'      => $res->disc,
