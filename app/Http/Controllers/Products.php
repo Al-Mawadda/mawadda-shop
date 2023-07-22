@@ -95,20 +95,26 @@ class Products extends Controller{
 
     function get_products(){
 
-        return Product::all()->count() > 0 ? [ "success" => true , "data" =>Product::with('cat')->orderBy('id','desc')->limit(10)->get()] : ["success" => false , "data" =>"no data"];
+        return Product::all()->count() > 0 ? 
+            [ "success" => true , "data" =>Product::with('cat')->orderBy('id','desc')->limit(10)->get()] : 
+            ["success" => false , "data" =>"no data"];
 
     }
 
 
     function get_prod($id){
 
-        return Product::where('cat_id',$id)->get()->count() > 0 ? [ "success" => true , "data" =>Product::where('cat_id',$id)->with('cat')->orderBy('id','desc')->get()] : ["success" => false , "data" =>"no data"];
+        return Product::where('cat_id',$id)->get()->count() > 0 ? 
+            [ "success" => true , "data" =>Product::where('cat_id',$id)->with('cat')->orderBy('id','desc')->get()] : 
+            ["success" => false , "data" =>"no data"];
 
     }
 
     function rand(){
 
-        return Product::all()->count() > 0 ? [ "success" => true , "data" =>Product::with('cat')->inRandomOrder()->limit(10)->get()] : ["success" => false , "data" =>"no data"];
+        return Product::all()->count() > 0 ? 
+            [ "success" => true , "data" =>Product::with('cat')->inRandomOrder()->limit(10)->get()] : 
+            ["success" => false , "data" =>"no data"];
 
     }
 
