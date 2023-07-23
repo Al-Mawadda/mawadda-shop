@@ -29,12 +29,23 @@
                                             </ul>
                                         </div>
                                     @endif
+
                             <form class="user" enctype="multipart/form-data" method="post">
 
                             	{{ @csrf_field() }}
                                 <div class="form-group ">
                                     <input type="file" name="img" class="form-control form-control-user" id="exampleLastName" placeholder="Last Name" style="height: 60px !important;">
                                 </div>
+
+                                <div class="form-group ">
+                                    <select type="type" name="" class="form-control form-control-user" id="exampleLastName"  style="height: 70px !important;">
+                                        <option value="0">نوع السلايدر</option>
+                                        <option value="1">سلايد الخصومات</option>
+                                        <option value="2">خصومات اكثر من ٣٠ ٪</option>
+                                    </select>
+                                </div>
+
+
                                 <button  class="btn btn-primary btn-user btn-block">
                                     Save Data
                                 </button>

@@ -29,35 +29,39 @@
                                         </ul>
                                     </div>
                                 @endif
-                            <form class="user" enctype="multipart/form-data" method="post">
+                            <form class="user" enctype="multipart/form-data" method="post" style="direction: rtl !important;">
 
                             	{{ @csrf_field() }}
                                 
                                 <div class="form-group ">
-                                    <label>Product Name</label>
-                                    <input type="text" name="name" class="form-control form-control-user" id="exampleLastName" placeholder=" Name" >
+                                    <label >اسم المنتج</label>
+                                    <input type="text" name="name" class="form-control form-control-user" id="exampleLastName"  >
                                 </div>
 
                                 <div class="form-group ">
-                                    <label>Discription</label>
-                                    <input type="text" name="disc" class="form-control form-control-user" id="exampleLastName" placeholder=" Disc">
+                                    <label>الوصف</label>
+                                    <input type="text" name="disc" class="form-control form-control-user" id="exampleLastName" >
                                 </div>
 
                                 <div class="form-group ">
-                                    <label>Price</label>
-                                    <input type="text" name="price" class="form-control form-control-user" id="exampleLastName" placeholder=" Price">
+                                    <label>السعر</label>
+                                    <input type="text" name="price" class="form-control form-control-user" id="exampleLastName" >
                                 </div>
 
                                 <div class="form-group ">
-                                    <label>Quentity</label>
-                                    <input type="number" name="qty" class="form-control form-control-user" id="exampleLastName" placeholder=" Quentity" >
+                                    <label>الكمية</label>
+                                    <input type="number" name="qty" class="form-control form-control-user" id="exampleLastName"  >
                                 </div>
 
                                 <div class="form-group ">
-                                    <label>Main Category</label>
+                                    <label>الخصم</label>
+                                    <input type="number" name="percent" class="form-control form-control-user" id="exampleLastName"  >
+                                </div>
+
+                                <div class="form-group ">
+                                    <label>القسم</label>
                                     <select type="text" name="cat_id" class="form-control form-control-user" id="exampleLastName" >
-                                        <option></option>
-                                        
+                                        <option></option>  
                                         @if($data??'')
                                             @foreach($data as $row)
                                                 <option value="{{ $row->id }}"> {{ $row->name }}</option>
@@ -65,25 +69,13 @@
                                         @endif
                                     </select>
                                 </div>
-                                <!--<div class="form-group ">-->
-                                <!--    <label>Sub Category</label>-->
-                                <!--    <select type="text" name="sub_id" class="form-control form-control-user" id="exampleLastName" >-->
-                                <!--        <option></option>-->
-                                        
-                                <!--        @if($sub??'')-->
-                                <!--            @foreach($sub as $row)-->
-                                <!--                <option value="{{ $row->id }}"> {{ $row->name }}</option>-->
-                                <!--            @endforeach-->
-                                <!--        @endif-->
-                                <!--    </select>-->
-                                <!--</div>-->
 
                                 <div class="form-group ">
-                                    <label>Product Image</label>
-                                    <input type="file" name="img" class="form-control form-control-user" id="exampleLastName" placeholder="Last Name" style="height: 60px !important;">
+                                    <label>صورة المنتج</label>
+                                    <input type="file" name="img" class="form-control form-control-user" id="exampleLastName"  style="height: 60px !important;">
                                 </div>
                                 <button  class="btn btn-primary btn-user btn-block">
-                                    Save Data
+                                    حفظ
                                 </button>
                                 
                             </form>

@@ -34,21 +34,26 @@
 
                             	{{ @csrf_field() }}
                                 <div class="form-group ">
+                                    <label >اسم المنتج</label>
                                     <input type="text" value="{{ $data->name }}" name="name" class="form-control form-control-user" id="exampleLastName" placeholder="Name" style="height: 60px !important;">
                                 </div>
                                 <div class="form-group ">
+                                    <label>الوصف</label>
                                     <input type="text" value="{{ $data->disc }}" name="disc" class="form-control form-control-user" id="exampleLastName" placeholder="Name" style="height: 60px !important;">
                                 </div>
                                 <div class="form-group ">
+                                    <label>السعر</label>
                                     <input type="text" value="{{ $data->price }}" name="price" class="form-control form-control-user" id="exampleLastName" placeholder="Name" style="height: 60px !important;">
                                 </div>
                                 <div class="form-group ">
+                                    <label>الكمية</label>
                                     <input type="text" value="{{ $data->qty }}" name="qty" class="form-control form-control-user" id="exampleLastName" placeholder="Name" style="height: 60px !important;">
                                 </div>
 
 
 
                                 <div class="form-group ">
+                                    <label>القسم</label>
                                     <select type="text" name="cat_id" class="form-control form-control-user" id="exampleLastName" >
                                         <option value="{{ $data->cat_id }}"> {{ $data->cat->name }}</option>
                                         
@@ -59,26 +64,16 @@
                                         @endif
                                     </select>
                                 </div>
-                                <!--<div class="form-group ">-->
-                                <!--    <label>Sub Category</label>-->
-                                <!--    <select type="text" name="sub_id" class="form-control form-control-user" id="exampleLastName" >-->
-                                <!--        <option value="{{ $data->sub_id }}"> {{ $data->sub->name ??''}}</option>-->
-                                        
-                                <!--        @if($sub??'')-->
-                                <!--            @foreach($sub as $row)-->
-                                <!--                <option value="{{ $row->id }}"> {{ $row->name }}</option>-->
-                                <!--            @endforeach-->
-                                <!--        @endif-->
-                                <!--    </select>-->
-                                <!--</div>-->
+
                                 <div class="form-group ">
+                                    <label>صورة المنتج</label>
                                     <input type="file" name="img" class="form-control form-control-user" id="exampleLastName" style="height: 60px !important;">
                                     <div>
                                         <img  width="100" height="100" src="{{ asset($data->img) }}">
                                     </div>
                                 </div>
                                 <button  class="btn btn-primary btn-user btn-block">
-                                    Save Data
+                                    حفظ
                                 </button>
                                 
                             </form>

@@ -23,7 +23,7 @@
             <li class="nav-item active">
                 <a class="nav-link" href="index.html">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
+                    <span>لوحة التحكم</span></a>
             </li>
 
             <!-- Divider -->
@@ -35,13 +35,13 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwos"
                     aria-expanded="true" aria-controls="collapseTwos">
                     <i class="fas fa-fw fa-image" style="color:white;"></i>
-                    <span>Sliders</span>
+                    <span>الصور المتحركة</span>
                 </a>
                 <div id="collapseTwos" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Sliders:</h6>
-                        <a class="collapse-item" href="{{ route('slider') }}">Add Slider</a>
-                        <a class="collapse-item" href="{{ route('slider-show') }}">Show Sliders</a>
+                        <h6 class="collapse-header"></h6>
+                        <a class="collapse-item" href="{{ route('slider') }}">اضافة</a>
+                        <a class="collapse-item" href="{{ route('slider-show') }}">عرض الكل</a>
                     </div>
                 </div>
             </li>
@@ -51,13 +51,13 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwoss"
                     aria-expanded="true" aria-controls="collapseTwoss">
                     <i class="fas fa-fw fa-list" style="color:white;"></i>
-                    <span>Categories</span>
+                    <span>الاقسام</span>
                 </a>
                 <div id="collapseTwoss" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Cat:</h6>
-                        <a class="collapse-item" href="{{ route('cat') }}">Add Category</a>
-                        <a class="collapse-item" href="{{ route('cat-show') }}">Show Categories</a>
+                        <h6 class="collapse-header"></h6>
+                        <a class="collapse-item" href="{{ route('cat') }}">اضافة</a>
+                        <a class="collapse-item" href="{{ route('cat-show') }}">عرض الكل</a>
                     </div>
                 </div>
             </li>   
@@ -68,13 +68,13 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwosss"
                     aria-expanded="true" aria-controls="collapseTwosss">
                     <i class="fas fa-fw fa-money-bill" style="color:white;"></i>
-                    <span>Products</span>
+                    <span>المنتجات</span>
                 </a>
                 <div id="collapseTwosss" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Products:</h6>
-                        <a class="collapse-item" href="{{ route('prod') }}">Add Product</a>
-                        <a class="collapse-item" href="{{ route('prod-show') }}">Show Products</a>
+                        <h6 class="collapse-header"></h6>
+                        <a class="collapse-item" href="{{ route('prod') }}">اضافة</a>
+                        <a class="collapse-item" href="{{ route('prod-show') }}">عرض الكل</a>
                     </div>
                 </div>
             </li>
@@ -85,13 +85,13 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#order"
                     aria-expanded="true" aria-controls="collapseTwosss">
                     <i class="fas fa-fw fa-shopping-cart" style="color:white;"></i>
-                    <span>Orders</span>
+                    <span>الطلبات</span>
                 </a>
                 <div id="order" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Orders:</h6>
-                        <a class="collapse-item" href="{{ route('order') }}">Show Recent Order</a>
-                        <a class="collapse-item" href="{{ route('comp-order') }}">Completed Oders</a>
+                        <h6 class="collapse-header"></h6>
+                        <a class="collapse-item" href="{{ route('order') }}">الطلبات الجديدة</a>
+                        <a class="collapse-item" href="{{ route('comp-order') }}">الطلبات المكتملة</a>
                     </div>
                 </div>
             </li>
@@ -128,9 +128,6 @@
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
-
-
-
                         <div class="topbar-divider d-none d-sm-block"></div>
 
                         <!-- Nav Item - User Information -->
@@ -144,14 +141,9 @@
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="{{ route('admin-edit')}}">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profile
-                                </a>
-                                <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
+                                    تسجيل الخروج
                                 </a>
                             </div>
                         </li>

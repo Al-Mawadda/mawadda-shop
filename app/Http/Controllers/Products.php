@@ -21,7 +21,6 @@ class Products extends Controller{
             'name'      => 'required',
             'disc'      => 'required',
             'price'     => 'required',
-            'old_price' => 'required',
             'percent'   => 'required',
             'qty'       => 'required',
             'cat_id'    => 'required',
@@ -68,8 +67,18 @@ class Products extends Controller{
         $data = Product::where('id','=',$id)->first();
         $data->name   = $res->name;
         $data->disc   = $res->disc;
-        $data->price  = $res->price;
+        
+        if($res->percent != 0)
+            $price = ($res->price /100) * $res->percent;
+        else
+            $price = $res->price;
+
+        $data->price  = $price;
+
+        $data->old_price = $res->price;
+
         $data->qty    = $res->qty;
+
         $data->cat_id = $res->cat_id;
         if($res->img !=null){
             $data->img = 'storage/'.$res->file('img')->store('public/prod','public');
