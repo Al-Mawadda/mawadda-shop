@@ -9,3 +9,5 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
+/resources/views/include/footer.blade.php
+/resources/views/include/head.blade.php

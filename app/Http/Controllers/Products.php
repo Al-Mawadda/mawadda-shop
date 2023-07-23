@@ -6,15 +6,19 @@ use Illuminate\Http\Request;
 
 use App\Models\Product;
 use App\Models\Category;
+use Illuminate\Validation\ValidationException;
 
 class Products extends Controller{
-    
+
     function index(){
     	$data = Category::all();
         return view('dashboard.prod.index',compact('data'));
-    
+
     }
 
+    /**
+     * @throws ValidationException
+     */
     function save(Request $res){
 
         $this->validate($res,[
@@ -25,9 +29,10 @@ class Products extends Controller{
             'qty'       => 'required',
             'cat_id'    => 'required',
             'img'       => 'required',
-        ]); 
-        if($res->percent != 0)
-            $price = ($res->price /100) * $res->percent;
+        ]);
+        if($res->percent != 0) {
+            $price = ($res->price / 100) * $res->percent;
+        }
         else
             $price = $res->price;
 
@@ -67,12 +72,10 @@ class Products extends Controller{
         $data = Product::where('id','=',$id)->first();
         $data->name   = $res->name;
         $data->disc   = $res->disc;
-        
         if($res->percent != 0)
             $price = ($res->price /100) * $res->percent;
         else
             $price = $res->price;
-
         $data->price  = $price;
 
         $data->old_price = $res->price;
@@ -89,7 +92,7 @@ class Products extends Controller{
         return redirect()->route('prod-show');
 
     }
-    
+
     function delete($id){
         $data = Product::where('id','=',$id)->first();
         $data->delete();
@@ -104,8 +107,8 @@ class Products extends Controller{
 
     function get_products(){
 
-        return Product::all()->count() > 0 ? 
-            [ "success" => true , "data" =>Product::with('cat')->orderBy('id','desc')->limit(10)->get()] : 
+        return Product::all()->count() > 0 ?
+            [ "success" => true , "data" =>Product::with('cat')->orderBy('id','desc')->limit(10)->get()] :
             ["success" => false , "data" =>"no data"];
 
     }
@@ -113,16 +116,16 @@ class Products extends Controller{
 
     function get_prod($id){
 
-        return Product::where('cat_id',$id)->get()->count() > 0 ? 
-            [ "success" => true , "data" =>Product::where('cat_id',$id)->with('cat')->orderBy('id','desc')->get()] : 
+        return Product::where('cat_id',$id)->get()->count() > 0 ?
+            [ "success" => true , "data" =>Product::where('cat_id',$id)->with('cat')->orderBy('id','desc')->get()] :
             ["success" => false , "data" =>"no data"];
 
     }
 
     function rand(){
 
-        return Product::all()->count() > 0 ? 
-            [ "success" => true , "data" =>Product::with('cat')->inRandomOrder()->limit(10)->get()] : 
+        return Product::all()->count() > 0 ?
+            [ "success" => true , "data" =>Product::with('cat')->inRandomOrder()->limit(10)->get()] :
             ["success" => false , "data" =>"no data"];
 
     }
