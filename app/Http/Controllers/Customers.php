@@ -61,4 +61,14 @@ class Customers extends Controller{
             return ["success"=>false,"data"=>"update error"];
 
     }
+
+    function delete_account($id){
+
+        $data = Customer::where('id',$id)->first()->delete();
+        
+        if($data)
+            return ["success"=>true];
+        else
+            return ["success"=>false];
+    }
 }

@@ -55,8 +55,8 @@ use Illuminate\Support\Facades\Route;
     
     Route::post('cus-login'        ,'Customers@login');
     Route::post('cus-signup'       ,'Customers@signup');
-    Route::post( 'cus-update/{id}' ,'Customers@update');
-
+    Route::post('cus-update/{id}'  ,'Customers@update');
+    Route::get( 'del-cus/{id}'     ,'Customers@delete_account');
     #############################################################################
 
     // Order
