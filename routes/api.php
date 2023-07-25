@@ -23,7 +23,7 @@ use App\Http\Controllers\Orders;
     #############################################################################
     
     Route::get('slider'       ,[Sliders::class,'get_slider']);
-    Route::get('slider-prod'  ,[Sliders::class,'get_slider']);
+    Route::get('slider-prod/{id}'  ,[Sliders::class,'slider_prod']);
 
     #############################################################################
 
