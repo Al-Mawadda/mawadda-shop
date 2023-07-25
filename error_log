@@ -1,4 +1,0 @@
-[19-May-2022 05:28:59 UTC] PHP Fatal error:  Cannot redeclare App\Models\Category::getImgAttribute() in /home4/alijafar/khudar.aj-sharp.com/app/Models/Category.php on line 17
-[19-May-2022 05:29:00 UTC] PHP Fatal error:  Cannot redeclare App\Models\Category::getImgAttribute() in /home4/alijafar/khudar.aj-sharp.com/app/Models/Category.php on line 17
-[19-May-2022 05:29:00 UTC] PHP Fatal error:  Cannot redeclare App\Models\Category::getImgAttribute() in /home4/alijafar/khudar.aj-sharp.com/app/Models/Category.php on line 17
-[19-May-2022 05:29:00 UTC] PHP Fatal error:  Cannot redeclare App\Models\Category::getImgAttribute() in /home4/alijafar/khudar.aj-sharp.com/app/Models/Category.php on line 17

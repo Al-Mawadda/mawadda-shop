@@ -65,11 +65,6 @@ class Sliders extends Controller{
     }
 
 
-
-
-
-
-
     //API FUNCTION
 
 
@@ -79,15 +74,18 @@ class Sliders extends Controller{
 
     }
 
+    function slider_prod($type){
+        if($type ==1){
+            
+            $data = Product::query()->where('precent','!=',0)->get();
 
+        }else if($type ==2){
+            $data = Product::query()->where('precent','>=',30)->get();            
+        }
 
+        return $data? [ "success" => true , "data" =>$data] : ["success" => false , "data" =>"no data"];
 
-
-
-
-
-
-
+    }
 
 
         

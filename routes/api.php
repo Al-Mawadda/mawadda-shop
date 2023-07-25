@@ -2,7 +2,11 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\MainController;
+use App\Http\Controllers\Sliders;
+use App\Http\Controllers\Categories;
+use App\Http\Controllers\Products;
+use App\Http\Controllers\Orders;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -18,7 +22,8 @@ use Illuminate\Support\Facades\Route;
 
     #############################################################################
     
-    Route::get('slider'       ,'Sliders@get_slider');
+    Route::get('slider'       ,[Sliders::class,'get_slider']);
+    Route::get('slider-prod'  ,[Sliders::class,'get_slider']);
 
     #############################################################################
 
@@ -26,7 +31,7 @@ use Illuminate\Support\Facades\Route;
 
     #############################################################################
     
-    Route::get('cats'       ,'Categories@get_cats');
+    Route::get('cats'       ,[Categories::class,'get_cats']);
 
     #############################################################################
 
@@ -34,9 +39,9 @@ use Illuminate\Support\Facades\Route;
 
     #############################################################################
     
-    Route::get('prod-10'           ,'Products@get_products');
-    Route::get('prod-cat/{id}'     ,'Products@get_prod');
-    Route::get('prod-rand'         ,'Products@rand');
+    Route::get('prod-10'           ,[Products::class,'get_products']);
+    Route::get('prod-cat/{id}'     ,[Products::class,'get_prod']);
+    Route::get('prod-rand'         ,[Products::class,'rand']);
 
     #############################################################################
 
@@ -44,19 +49,19 @@ use Illuminate\Support\Facades\Route;
 
     #############################################################################
     
-    Route::post('cus-login'        ,'Customers@login');
-    Route::post('cus-signup'       ,'Customers@signup');
-    Route::post('cus-update/{id}'  ,'Customers@update');
-    Route::get( 'del-cus/{id}'     ,'Customers@delete_account');
+    Route::post('cus-login'        ,[Customers::class,'login' ]);
+    Route::post('cus-signup'       ,[Customers::class,'signup']);
+    Route::post('cus-update/{id}'  ,[Customers::class,'update']);
+    Route::get( 'del-cus/{id}'     ,[Customers::class,'delete_account']);
     #############################################################################
 
     // Order
 
     #############################################################################
     
-    Route::post('order'                ,'Orders@new_order');
-    Route::get('order-view/{id}'       ,'Orders@get_orders');
-    Route::get('order-reuse/{id}'      ,'Orders@order_reuse');
+    Route::post('order'                ,[Orders::class,'new_order'  ]);
+    Route::get('order-view/{id}'       ,[Orders::class,'get_orders' ]);
+    Route::get('order-reuse/{id}'      ,[Orders::class,'order_reuse']);
 
     #############################################################################
 
@@ -64,9 +69,9 @@ use Illuminate\Support\Facades\Route;
 
     #############################################################################
     
-    Route::get('search-cat/{text}'           ,'MainController@cat_search');
+    Route::get('search-cat/{text}'           ,[MainController::class,'cat_search']);
 
-    Route::get('search-prod/{text}'           ,'MainController@prod_search');
+    Route::get('search-prod/{text}'           ,[MainController::class,'prod_search']);
 
     #############################################################################
 

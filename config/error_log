@@ -1,8 +1,0 @@
-[24-Nov-2022 05:36:34 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home4/alijafar/khudar.aj-sharp.com/config/session.php:22
-Stack trace:
-#0 {main}
-  thrown in /home4/alijafar/khudar.aj-sharp.com/config/session.php on line 22
-[06-Apr-2023 21:46:35 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home4/alijafar/khudar.aj-sharp.com/config/session.php:22
-Stack trace:
-#0 {main}
-  thrown in /home4/alijafar/khudar.aj-sharp.com/config/session.php on line 22
